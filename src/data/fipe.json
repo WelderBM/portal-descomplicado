@@ -1,0 +1,150 @@
+[
+  {
+    "id": "fipe-001",
+    "slug": "fiat-uno-2020",
+    "type": "fipe",
+    "metadata": {
+      "title": "Fiat Uno Vivace 1.0 2020",
+      "description": "Consulta FIPE completa do Fiat Uno Vivace 1.0 2020 com histórico de preços, tendência de mercado e estimativa de IPVA",
+      "source": "Tabela FIPE - Fundação Instituto de Pesquisas Econômicas",
+      "updatedAt": "2025-12-30"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "O Fiat Uno 2020 apresenta valorização de 8.5% nos últimos 12 meses, contrariando a tendência de depreciação típica. Modelo popular com alta liquidez no mercado de usados.",
+      "highlights": [
+        "Valorização de 8.5% em 12 meses",
+        "Alta liquidez no mercado",
+        "IPVA estimado: R$ 1.200/ano",
+        "Baixo custo de manutenção"
+      ]
+    },
+    "dataPoints": {
+      "currentPrice": 42500,
+      "priceHistory": [
+        { "month": "2025-01", "value": 42500 },
+        { "month": "2024-12", "value": 41800 },
+        { "month": "2024-11", "value": 41200 },
+        { "month": "2024-10", "value": 40500 },
+        { "month": "2024-09", "value": 40000 },
+        { "month": "2024-08", "value": 39800 },
+        { "month": "2024-07", "value": 39500 },
+        { "month": "2024-06", "value": 39200 },
+        { "month": "2024-05", "value": 39000 },
+        { "month": "2024-04", "value": 38800 },
+        { "month": "2024-03", "value": 38500 },
+        { "month": "2024-02", "value": 39200 }
+      ],
+      "ipvaEstimated": 1200,
+      "depreciationInfo": {
+        "percentage": -8.5,
+        "trend": "up"
+      }
+    },
+    "affiliate": {
+      "category": "seguro-auto",
+      "cta": "Cotar Seguro com Desconto",
+      "url": "https://exemplo.com/seguro-auto"
+    }
+  },
+  {
+    "id": "fipe-002",
+    "slug": "honda-civic-2019",
+    "type": "fipe",
+    "metadata": {
+      "title": "Honda Civic EXL 2.0 2019",
+      "description": "Consulta FIPE do Honda Civic EXL 2.0 2019 com análise de depreciação e custos de propriedade",
+      "source": "Tabela FIPE - Fundação Instituto de Pesquisas Econômicas",
+      "updatedAt": "2025-12-30"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#ef4444"
+    },
+    "insights": {
+      "summary": "O Honda Civic 2019 sofreu depreciação de 12% nos últimos 12 meses, seguindo a média do segmento de sedãs médios. Modelo premium com boa aceitação no mercado.",
+      "highlights": [
+        "Depreciação de 12% em 12 meses",
+        "Segmento premium consolidado",
+        "IPVA estimado: R$ 3.800/ano",
+        "Custo de manutenção médio-alto"
+      ]
+    },
+    "dataPoints": {
+      "currentPrice": 95000,
+      "priceHistory": [
+        { "month": "2025-01", "value": 95000 },
+        { "month": "2024-12", "value": 96500 },
+        { "month": "2024-11", "value": 98000 },
+        { "month": "2024-10", "value": 99500 },
+        { "month": "2024-09", "value": 101000 },
+        { "month": "2024-08", "value": 102500 },
+        { "month": "2024-07", "value": 104000 },
+        { "month": "2024-06", "value": 105000 },
+        { "month": "2024-05", "value": 106000 },
+        { "month": "2024-04", "value": 107000 },
+        { "month": "2024-03", "value": 107500 },
+        { "month": "2024-02", "value": 108000 }
+      ],
+      "ipvaEstimated": 3800,
+      "depreciationInfo": {
+        "percentage": 12.0,
+        "trend": "down"
+      }
+    },
+    "affiliate": {
+      "category": "seguro-auto",
+      "cta": "Cotar Seguro Premium",
+      "url": "https://exemplo.com/seguro-auto-premium"
+    }
+  },
+  {
+    "id": "fipe-003",
+    "slug": "volkswagen-gol-2021",
+    "type": "fipe",
+    "metadata": {
+      "title": "Volkswagen Gol 1.0 2021",
+      "description": "Consulta FIPE do VW Gol 1.0 2021 com análise de estabilidade de preço e custos operacionais",
+      "source": "Tabela FIPE - Fundação Instituto de Pesquisas Econômicas",
+      "updatedAt": "2025-12-30"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#6b7280"
+    },
+    "insights": {
+      "summary": "O VW Gol 2021 mantém estabilidade de preço com variação de apenas 2% nos últimos 12 meses. Modelo econômico com excelente custo-benefício para uso urbano.",
+      "highlights": [
+        "Estabilidade de preço (2% de variação)",
+        "Excelente custo-benefício",
+        "IPVA estimado: R$ 1.500/ano",
+        "Baixíssimo custo operacional"
+      ]
+    },
+    "dataPoints": {
+      "currentPrice": 52000,
+      "priceHistory": [
+        { "month": "2025-01", "value": 52000 },
+        { "month": "2024-12", "value": 51800 },
+        { "month": "2024-11", "value": 51500 },
+        { "month": "2024-10", "value": 51200 },
+        { "month": "2024-09", "value": 51000 },
+        { "month": "2024-08", "value": 51000 },
+        { "month": "2024-07", "value": 51200 },
+        { "month": "2024-06", "value": 51500 },
+        { "month": "2024-05", "value": 51800 },
+        { "month": "2024-04", "value": 52000 },
+        { "month": "2024-03", "value": 52200 },
+        { "month": "2024-02", "value": 52500 }
+      ],
+      "ipvaEstimated": 1500,
+      "depreciationInfo": {
+        "percentage": 1.0,
+        "trend": "stable"
+      }
+    }
+  }
+]
