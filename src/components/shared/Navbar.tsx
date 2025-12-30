@@ -2,12 +2,9 @@
 "use client";
 
 import Link from "next/link";
-import { Search } from "lucide-react";
-import { useState } from "react";
+import { SearchBar } from "./SearchBar";
 
 export function Navbar() {
-  const [searchQuery, setSearchQuery] = useState("");
-
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-surface/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -24,16 +21,7 @@ export function Navbar() {
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-md mx-8">
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground-muted" />
-              <input
-                type="text"
-                placeholder="Buscar veículos, alimentos, calculadoras..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-lg border border-border bg-surface-elevated py-2 pl-10 pr-4 text-sm text-foreground placeholder:text-foreground-muted focus:border-border-hover focus:outline-none focus:ring-2 focus:ring-success/20"
-              />
-            </div>
+            <SearchBar />
           </div>
 
           {/* Navigation Links */}
@@ -61,16 +49,7 @@ export function Navbar() {
 
         {/* Search Bar - Mobile */}
         <div className="md:hidden pb-4">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground-muted" />
-            <input
-              type="text"
-              placeholder="Buscar..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-border bg-surface-elevated py-2 pl-10 pr-4 text-sm text-foreground placeholder:text-foreground-muted focus:border-border-hover focus:outline-none focus:ring-2 focus:ring-success/20"
-            />
-          </div>
+          <SearchBar />
         </div>
       </div>
     </nav>

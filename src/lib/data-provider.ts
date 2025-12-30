@@ -1,5 +1,6 @@
 // lib/data-provider.ts - Provedor de Dados do Portal
 
+import Fuse from "fuse.js";
 import { PortalItem, FipeItem, TacoItem } from "@/types/portal";
 import fipeData from "@/data/fipe.json";
 import tacoData from "@/data/taco.json";
@@ -34,18 +35,33 @@ export function getTacoItems(): TacoItem[] {
 }
 
 /**
- * Busca semântica simples (pode ser expandida com Fuse.js no futuro)
+ * Busca avançada com Fuse.js (Fuzzy Search)
+ * Permite encontrar itens mesmo com erros de digitação
  */
 export function searchItems(query: string): PortalItem[] {
-  const allItems = getAllItems();
-  const lowerQuery = query.toLowerCase();
+  if (!query || query.trim().length === 0) {
+    return [];
+  }
 
-  return allItems.filter(
-    (item) =>
-      item.metadata.title.toLowerCase().includes(lowerQuery) ||
-      item.metadata.description.toLowerCase().includes(lowerQuery) ||
-      item.slug.toLowerCase().includes(lowerQuery)
-  );
+  const allItems = getAllItems();
+
+  // Configuração do Fuse.js para busca fuzzy
+  const fuse = new Fuse(allItems, {
+    keys: [
+      { name: "metadata.title", weight: 2 }, // Prioriza título
+      { name: "metadata.description", weight: 1.5 },
+      { name: "slug", weight: 1.2 },
+      { name: "type", weight: 1 }, // Categoria
+      { name: "insights.summary", weight: 0.8 },
+      { name: "insights.highlights", weight: 0.5 },
+    ],
+    threshold: 0.4, // 0 = match exato, 1 = match qualquer coisa
+    includeScore: true,
+    minMatchCharLength: 2,
+  });
+
+  const results = fuse.search(query);
+  return results.map((result) => result.item);
 }
 
 /**

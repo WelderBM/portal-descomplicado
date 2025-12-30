@@ -23,14 +23,26 @@ export default function FipeListPage() {
           </span>
         </div>
 
-        <h1 className="mb-4 text-4xl font-bold tracking-tight">
-          Consulta de Veículos
-        </h1>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="mb-4 text-4xl font-bold tracking-tight">
+              Consulta de Veículos
+            </h1>
 
-        <p className="max-w-3xl text-lg text-foreground-muted">
-          Consulte preços de mercado de veículos com histórico de valorização,
-          tendências e estimativa de IPVA. Dados oficiais da Tabela FIPE.
-        </p>
+            <p className="max-w-3xl text-lg text-foreground-muted">
+              Consulte preços de mercado de veículos com histórico de
+              valorização, tendências e estimativa de IPVA. Dados oficiais da
+              Tabela FIPE.
+            </p>
+          </div>
+
+          <Link
+            href="/comparar/fipe"
+            className="btn btn-primary flex items-center gap-2"
+          >
+            Comparar Veículos
+          </Link>
+        </div>
       </div>
 
       {/* Stats */}

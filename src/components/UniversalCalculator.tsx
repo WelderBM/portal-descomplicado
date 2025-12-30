@@ -5,6 +5,10 @@ import { PortalItem, isFipeItem, isTacoItem } from "@/types/portal";
 import { BentoCard } from "./bento/BentoCard";
 import { PriceChart } from "./ui/PriceChart";
 import { NutrientRadar } from "./ui/NutrientRadar";
+import {
+  TripCalculator,
+  MealSimulator,
+} from "./calculators/InteractiveCalculator";
 import { formatCurrency } from "@/lib/calculators";
 import { ExternalLink, TrendingUp, Info } from "lucide-react";
 
@@ -133,6 +137,11 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
                 accentColor={visuals.accentColor}
               />
             </BentoCard>
+
+            {/* Trip Calculator - Interactive */}
+            <div className="md:col-span-2">
+              <TripCalculator fuelPrice={6.0} vehicleName={metadata.title} />
+            </div>
           </>
         )}
 
@@ -189,6 +198,17 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
                 accentColor={visuals.accentColor}
               />
             </BentoCard>
+
+            {/* Meal Simulator - Interactive */}
+            <div className="md:col-span-2">
+              <MealSimulator
+                foodName={metadata.title}
+                baseCalories={item.dataPoints.macros.calories}
+                baseProtein={item.dataPoints.macros.protein}
+                baseCarbs={item.dataPoints.macros.carbs}
+                baseFat={item.dataPoints.macros.fat}
+              />
+            </div>
           </>
         )}
       </div>
