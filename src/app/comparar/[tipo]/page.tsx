@@ -1,10 +1,16 @@
 // app/comparar/[tipo]/page.tsx - Sistema de Comparação
 "use client";
 
-import { use, useState } from "react";
+import { use, useState, useRef } from "react";
 import { getFipeItems, getTacoItems } from "@/lib/data-provider";
 import { FipeItem, TacoItem } from "@/types/portal";
 import { formatCurrency } from "@/lib/calculators";
+import {
+  ComparisonRadar,
+  prepareFipeRadarData,
+  prepareTacoRadarData,
+} from "@/components/comparison/ComparisonRadar";
+import { ExportPDF } from "@/components/comparison/ExportPDF";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -24,6 +30,7 @@ interface PageProps {
 export default function ComparePage({ params }: PageProps) {
   const { tipo } = use(params);
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const comparisonRef = useRef<HTMLDivElement>(null);
 
   // Busca itens baseado no tipo
   const items =
@@ -105,15 +112,23 @@ export default function ComparePage({ params }: PageProps) {
 
       {/* Comparison Table */}
       {item1 && item2 && (
-        <div className="space-y-4">
+        <div className="space-y-8" ref={comparisonRef}>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold">Comparação</h2>
-            <button
-              onClick={() => setSelectedItems([])}
-              className="text-sm text-foreground-muted hover:text-foreground transition-colors"
-            >
-              Limpar seleção
-            </button>
+            <div className="flex items-center gap-4">
+              <ExportPDF
+                comparisonRef={comparisonRef}
+                item1Name={item1.metadata.title}
+                item2Name={item2.metadata.title}
+                type={tipo as "fipe" | "taco"}
+              />
+              <button
+                onClick={() => setSelectedItems([])}
+                className="text-sm text-foreground-muted hover:text-foreground transition-colors"
+              >
+                Limpar seleção
+              </button>
+            </div>
           </div>
 
           {/* FIPE Comparison */}
@@ -232,6 +247,33 @@ export default function ComparePage({ params }: PageProps) {
             </div>
           )}
 
+          {/* Radar Chart - FIPE */}
+          {isFipe && item1.type === "fipe" && item2.type === "fipe" && (
+            <div className="card">
+              <h3 className="mb-6 text-lg font-semibold">
+                Análise Visual Comparativa
+              </h3>
+              <ComparisonRadar
+                item1Name={item1.metadata.title}
+                item2Name={item2.metadata.title}
+                data={prepareFipeRadarData(
+                  {
+                    price: item1.dataPoints.currentPrice,
+                    ipva: item1.dataPoints.ipvaEstimated,
+                    depreciation: item1.dataPoints.depreciationInfo.percentage,
+                  },
+                  {
+                    price: item2.dataPoints.currentPrice,
+                    ipva: item2.dataPoints.ipvaEstimated,
+                    depreciation: item2.dataPoints.depreciationInfo.percentage,
+                  }
+                )}
+                item1Color="#10b981"
+                item2Color="#3b82f6"
+              />
+            </div>
+          )}
+
           {/* TACO Comparison */}
           {!isFipe && item1.type === "taco" && item2.type === "taco" && (
             <div className="overflow-x-auto">
@@ -327,6 +369,37 @@ export default function ComparePage({ params }: PageProps) {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          )}
+
+          {/* Radar Chart - TACO */}
+          {!isFipe && item1.type === "taco" && item2.type === "taco" && (
+            <div className="card">
+              <h3 className="mb-6 text-lg font-semibold">
+                Análise Visual Comparativa
+              </h3>
+              <ComparisonRadar
+                item1Name={item1.metadata.title}
+                item2Name={item2.metadata.title}
+                data={prepareTacoRadarData(
+                  {
+                    protein: item1.dataPoints.macros.protein,
+                    carbs: item1.dataPoints.macros.carbs,
+                    fat: item1.dataPoints.macros.fat,
+                    fiber: item1.dataPoints.macros.fiber,
+                    calories: item1.dataPoints.macros.calories,
+                  },
+                  {
+                    protein: item2.dataPoints.macros.protein,
+                    carbs: item2.dataPoints.macros.carbs,
+                    fat: item2.dataPoints.macros.fat,
+                    fiber: item2.dataPoints.macros.fiber,
+                    calories: item2.dataPoints.macros.calories,
+                  }
+                )}
+                item1Color="#10b981"
+                item2Color="#f59e0b"
+              />
             </div>
           )}
         </div>

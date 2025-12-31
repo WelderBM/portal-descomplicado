@@ -1,10 +1,17 @@
 // components/UniversalCalculator.tsx - Motor de Renderização Universal
 "use client";
 
+import { useState } from "react";
 import { PortalItem, isFipeItem, isTacoItem } from "@/types/portal";
 import { BentoCard } from "./bento/BentoCard";
 import { PriceChart } from "./ui/PriceChart";
 import { NutrientRadar } from "./ui/NutrientRadar";
+import { FavoriteButton } from "./ui/FavoriteButton";
+import { Toast } from "./ui/Toast";
+import {
+  AffiliateOffer,
+  getAffiliateCategory,
+} from "./affiliate/AffiliateOffer";
 import {
   TripCalculator,
   MealSimulator,
@@ -18,6 +25,18 @@ interface UniversalCalculatorProps {
 
 export function UniversalCalculator({ item }: UniversalCalculatorProps) {
   const { metadata, visuals, insights, affiliate } = item;
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastType, setToastType] = useState<"success" | "error">("success");
+
+  const handleFavoriteToggle = (isFavorited: boolean) => {
+    const garageName = item.type === "fipe" ? "Minha Garagem" : "Meu Diário";
+    setToastMessage(
+      isFavorited ? `Adicionado a ${garageName}!` : `Removido de ${garageName}`
+    );
+    setToastType(isFavorited ? "success" : "info");
+    setShowToast(true);
+  };
 
   return (
     <div className="space-y-8">
@@ -31,11 +50,19 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
           <span>Atualizado em {metadata.updatedAt}</span>
         </div>
 
-        <h1 className="text-4xl font-bold tracking-tight">{metadata.title}</h1>
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1">
+            <h1 className="text-4xl font-bold tracking-tight">
+              {metadata.title}
+            </h1>
 
-        <p className="text-lg text-foreground-muted max-w-3xl">
-          {metadata.description}
-        </p>
+            <p className="mt-4 text-lg text-foreground-muted max-w-3xl">
+              {metadata.description}
+            </p>
+          </div>
+
+          <FavoriteButton item={item} onToggle={handleFavoriteToggle} />
+        </div>
       </div>
 
       {/* Insights Summary */}
@@ -213,28 +240,17 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
         )}
       </div>
 
-      {/* Affiliate Widget (Contextual) */}
-      {affiliate && (
-        <div className="rounded-xl border border-border bg-gradient-to-br from-surface to-surface-elevated p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-semibold">{affiliate.cta}</h3>
-              <p className="mt-1 text-sm text-foreground-muted">
-                Parceiros selecionados com ofertas exclusivas
-              </p>
-            </div>
-            <a
-              href={affiliate.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary flex items-center gap-2"
-            >
-              Ver Ofertas
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      )}
+      {/* Affiliate Widget (Contextual Inteligente) */}
+      <AffiliateOffer
+        category={getAffiliateCategory(
+          item.type,
+          isFipeItem(item) ? item.dataPoints.currentPrice : undefined,
+          isTacoItem(item) ? item.dataPoints.macros.carbs : undefined
+        )}
+        itemValue={isFipeItem(item) ? item.dataPoints.currentPrice : undefined}
+        itemName={metadata.title}
+        isLowCarb={isTacoItem(item) && item.dataPoints.macros.carbs < 5}
+      />
 
       {/* Source Citation */}
       <div className="rounded-lg border border-border bg-surface p-4">
@@ -244,6 +260,15 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
           decisões tomadas com base nas informações fornecidas.
         </p>
       </div>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <Toast
+          message={toastMessage}
+          type={toastType}
+          onClose={() => setShowToast(false)}
+        />
+      )}
     </div>
   );
 }

@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { SearchBar } from "./SearchBar";
+import { Car, Apple } from "lucide-react";
 
 export function Navbar() {
   return (
@@ -38,11 +39,22 @@ export function Navbar() {
             >
               Nutrição
             </Link>
+            <div className="h-4 w-px bg-border" />
             <Link
-              href="/calculadoras"
-              className="text-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+              href="/minha-garagem"
+              className="flex items-center gap-1.5 text-sm font-medium text-foreground-muted transition-colors hover:text-success"
+              title="Minha Garagem"
             >
-              Calculadoras
+              <Car className="h-4 w-4" />
+              <span className="hidden lg:inline">Garagem</span>
+            </Link>
+            <Link
+              href="/meu-diario"
+              className="flex items-center gap-1.5 text-sm font-medium text-foreground-muted transition-colors hover:text-info"
+              title="Meu Diário"
+            >
+              <Apple className="h-4 w-4" />
+              <span className="hidden lg:inline">Diário</span>
             </Link>
           </div>
         </div>

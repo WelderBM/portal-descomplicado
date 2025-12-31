@@ -76,6 +76,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/ofertas"
+                  className="text-sm text-foreground-muted hover:text-foreground transition-colors"
+                >
+                  Ofertas e Parcerias
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contato"
                   className="text-sm text-foreground-muted hover:text-foreground transition-colors"
                 >
