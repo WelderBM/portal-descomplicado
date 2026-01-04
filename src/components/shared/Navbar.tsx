@@ -12,7 +12,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-success to-info">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-success to-info">
               <span className="text-lg font-bold text-background">D</span>
             </div>
             <span className="text-xl font-bold tracking-tight">
@@ -38,6 +38,12 @@ export function Navbar() {
               className="text-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
             >
               Nutrição
+            </Link>
+            <Link
+              href="/medicamentos"
+              className="text-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+            >
+              Medicamentos
             </Link>
             <div className="h-4 w-px bg-border" />
             <Link
