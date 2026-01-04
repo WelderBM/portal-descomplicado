@@ -1,0 +1,7 @@
+# Supabase Configuration
+# Obtenha estas chaves em: Painel Supabase > Settings > API
+NEXT_PUBLIC_SUPABASE_URL=https://sua-url-do-projeto.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anonima-publica
+
+# Opcional: Chave de Serviço para Scripts de ETL (NUNCA expor no frontend)
+# SUPABASE_SERVICE_ROLE_KEY=sua-chave-secreta-service-role
