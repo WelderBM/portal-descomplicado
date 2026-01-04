@@ -2,7 +2,15 @@
 "use client";
 
 import { useState } from "react";
-import { PortalItem, isFipeItem, isTacoItem } from "@/types/portal";
+import { PriceSavingsCard } from "./medicamentos/PriceSavingsCard";
+import { ActiveIngredientBadge } from "./medicamentos/ActiveIngredientBadge";
+import {
+  PortalItem,
+  isFipeItem,
+  isTacoItem,
+  isMedicamentoItem,
+} from "@/types/portal";
+
 import { BentoCard } from "./bento/BentoCard";
 import { PriceChart } from "./ui/PriceChart";
 import { NutrientRadar } from "./ui/NutrientRadar";
@@ -27,7 +35,9 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
   const { metadata, visuals, insights, affiliate } = item;
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [toastType, setToastType] = useState<"success" | "error">("success");
+  const [toastType, setToastType] = useState<
+    "success" | "error" | "info" | "warning"
+  >("success");
 
   const handleFavoriteToggle = (isFavorited: boolean) => {
     const garageName = item.type === "fipe" ? "Minha Garagem" : "Meu Diário";
@@ -68,7 +78,7 @@ export function UniversalCalculator({ item }: UniversalCalculatorProps) {
       {/* Insights Summary */}
       <div className="rounded-xl border border-border bg-surface-elevated p-6">
         <div className="flex items-start gap-3">
-          <Info className="h-5 w-5 text-info mt-1 flex-shrink-0" />
+          <Info className="h-5 w-5 text-info mt-1 shrink-0" />
           <div className="space-y-3">
             <p className="text-foreground">{insights.summary}</p>
             <ul className="space-y-2">
