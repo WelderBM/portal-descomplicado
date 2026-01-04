@@ -1,0 +1,518 @@
+[
+  {
+    "id": "med-0002",
+    "slug": "dipirona-sodica-500mg-10-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Dipirona Sódica 500mg - 10 comprimidos",
+      "description": "Compare preços de Dipirona Sódica 500mg - 10 comprimidos. O genérico custa em média R$ 17.71, uma economia de 40% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 11.72 optando pelo genérico de Dipirona Sódica.",
+      "highlights": [
+        "Princípio Ativo: Dipirona Sódica",
+        "Referência: Novalgina / Anador",
+        "Classe: Analgésico e Antipirético",
+        "Economia média de 40%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Dipirona Sódica",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.8542.718.51",
+      "classeTerapeutica": "Analgésico e Antipirético",
+      "apresentacao": "500mg - 10 comprimidos",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 29.43,
+        "genericoMedio": 17.71,
+        "poupancaReal": 11.72,
+        "poupancaPorcentagem": 40
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0003",
+    "slug": "dipirona-sodica-1g-10-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Dipirona Sódica 1g - 10 comprimidos",
+      "description": "Compare preços de Dipirona Sódica 1g - 10 comprimidos. O genérico custa em média R$ 9.53, uma economia de 47% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 8.35 optando pelo genérico de Dipirona Sódica.",
+      "highlights": [
+        "Princípio Ativo: Dipirona Sódica",
+        "Referência: Novalgina / Anador",
+        "Classe: Analgésico e Antipirético",
+        "Economia média de 47%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Dipirona Sódica",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.6478.892.49",
+      "classeTerapeutica": "Analgésico e Antipirético",
+      "apresentacao": "1g - 10 comprimidos",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 17.88,
+        "genericoMedio": 9.53,
+        "poupancaReal": 8.35,
+        "poupancaPorcentagem": 47
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0004",
+    "slug": "dipirona-sodica-500mgml-gotas-20ml",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Dipirona Sódica 500mg/ml - Gotas 20ml",
+      "description": "Compare preços de Dipirona Sódica 500mg/ml - Gotas 20ml. O genérico custa em média R$ 28.7, uma economia de 36% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 16.01 optando pelo genérico de Dipirona Sódica.",
+      "highlights": [
+        "Princípio Ativo: Dipirona Sódica",
+        "Referência: Novalgina / Anador",
+        "Classe: Analgésico e Antipirético",
+        "Economia média de 36%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Dipirona Sódica",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.7825.360.18",
+      "classeTerapeutica": "Analgésico e Antipirético",
+      "apresentacao": "500mg/ml - Gotas 20ml",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 44.71,
+        "genericoMedio": 28.7,
+        "poupancaReal": 16.01,
+        "poupancaPorcentagem": 36
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0005",
+    "slug": "paracetamol-750mg-20-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Paracetamol 750mg - 20 comprimidos",
+      "description": "Compare preços de Paracetamol 750mg - 20 comprimidos. O genérico custa em média R$ 33.69, uma economia de 49% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 32.01 optando pelo genérico de Paracetamol.",
+      "highlights": [
+        "Princípio Ativo: Paracetamol",
+        "Referência: Tylenol",
+        "Classe: Analgésico e Antipirético",
+        "Economia média de 49%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Paracetamol",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.1849.967.77",
+      "classeTerapeutica": "Analgésico e Antipirético",
+      "apresentacao": "750mg - 20 comprimidos",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 65.7,
+        "genericoMedio": 33.69,
+        "poupancaReal": 32.01,
+        "poupancaPorcentagem": 49
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0006",
+    "slug": "paracetamol-500mg-20-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Paracetamol 500mg - 20 comprimidos",
+      "description": "Compare preços de Paracetamol 500mg - 20 comprimidos. O genérico custa em média R$ 15.14, uma economia de 54% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 18.07 optando pelo genérico de Paracetamol.",
+      "highlights": [
+        "Princípio Ativo: Paracetamol",
+        "Referência: Tylenol",
+        "Classe: Analgésico e Antipirético",
+        "Economia média de 54%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Paracetamol",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.5127.242.80",
+      "classeTerapeutica": "Analgésico e Antipirético",
+      "apresentacao": "500mg - 20 comprimidos",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 33.21,
+        "genericoMedio": 15.14,
+        "poupancaReal": 18.07,
+        "poupancaPorcentagem": 54
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0007",
+    "slug": "amoxicilina-500mg-21-capsulas",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Amoxicilina 500mg - 21 cápsulas",
+      "description": "Compare preços de Amoxicilina 500mg - 21 cápsulas. O genérico custa em média R$ 17.36, uma economia de 58% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#ef4444"
+    },
+    "insights": {
+      "summary": "Economize R$ 24.07 optando pelo genérico de Amoxicilina.",
+      "highlights": [
+        "Princípio Ativo: Amoxicilina",
+        "Referência: Amoxil",
+        "Classe: Antibiótico",
+        "Economia média de 58%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Amoxicilina",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.6104.625.93",
+      "classeTerapeutica": "Antibiótico",
+      "apresentacao": "500mg - 21 cápsulas",
+      "tarja": "vermelha",
+      "prices": {
+        "referencia": 41.43,
+        "genericoMedio": 17.36,
+        "poupancaReal": 24.07,
+        "poupancaPorcentagem": 58
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0008",
+    "slug": "amoxicilina-875mg-14-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Amoxicilina 875mg - 14 comprimidos",
+      "description": "Compare preços de Amoxicilina 875mg - 14 comprimidos. O genérico custa em média R$ 10.03, uma economia de 63% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#ef4444"
+    },
+    "insights": {
+      "summary": "Economize R$ 17.02 optando pelo genérico de Amoxicilina.",
+      "highlights": [
+        "Princípio Ativo: Amoxicilina",
+        "Referência: Amoxil",
+        "Classe: Antibiótico",
+        "Economia média de 63%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Amoxicilina",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.1668.182.55",
+      "classeTerapeutica": "Antibiótico",
+      "apresentacao": "875mg - 14 comprimidos",
+      "tarja": "vermelha",
+      "prices": {
+        "referencia": 27.05,
+        "genericoMedio": 10.03,
+        "poupancaReal": 17.02,
+        "poupancaPorcentagem": 63
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0009",
+    "slug": "losartana-potassica-50mg-30-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Losartana Potássica 50mg - 30 comprimidos",
+      "description": "Compare preços de Losartana Potássica 50mg - 30 comprimidos. O genérico custa em média R$ 28.28, uma economia de 43% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#ef4444"
+    },
+    "insights": {
+      "summary": "Economize R$ 21.14 optando pelo genérico de Losartana Potássica.",
+      "highlights": [
+        "Princípio Ativo: Losartana Potássica",
+        "Referência: Cozaar",
+        "Classe: Anti-hipertensivo",
+        "Economia média de 43%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Losartana Potássica",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.8361.225.35",
+      "classeTerapeutica": "Anti-hipertensivo",
+      "apresentacao": "50mg - 30 comprimidos",
+      "tarja": "vermelha",
+      "prices": {
+        "referencia": 49.42,
+        "genericoMedio": 28.28,
+        "poupancaReal": 21.14,
+        "poupancaPorcentagem": 43
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0010",
+    "slug": "sildenafila-50mg-4-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Sildenafila 50mg - 4 comprimidos",
+      "description": "Compare preços de Sildenafila 50mg - 4 comprimidos. O genérico custa em média R$ 19.85, uma economia de 59% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#ef4444"
+    },
+    "insights": {
+      "summary": "Economize R$ 28.51 optando pelo genérico de Sildenafila.",
+      "highlights": [
+        "Princípio Ativo: Sildenafila",
+        "Referência: Viagra",
+        "Classe: Disfunção Erétil",
+        "Economia média de 59%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Sildenafila",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.9773.255.58",
+      "classeTerapeutica": "Disfunção Erétil",
+      "apresentacao": "50mg - 4 comprimidos",
+      "tarja": "vermelha",
+      "prices": {
+        "referencia": 48.36,
+        "genericoMedio": 19.85,
+        "poupancaReal": 28.51,
+        "poupancaPorcentagem": 59
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0011",
+    "slug": "omeprazol-20mg-28-capsulas",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Omeprazol 20mg - 28 cápsulas",
+      "description": "Compare preços de Omeprazol 20mg - 28 cápsulas. O genérico custa em média R$ 12.07, uma economia de 58% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#ef4444"
+    },
+    "insights": {
+      "summary": "Economize R$ 16.75 optando pelo genérico de Omeprazol.",
+      "highlights": [
+        "Princípio Ativo: Omeprazol",
+        "Referência: Losec",
+        "Classe: Antiulceroso",
+        "Economia média de 58%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Omeprazol",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.3427.599.81",
+      "classeTerapeutica": "Antiulceroso",
+      "apresentacao": "20mg - 28 cápsulas",
+      "tarja": "vermelha",
+      "prices": {
+        "referencia": 28.82,
+        "genericoMedio": 12.07,
+        "poupancaReal": 16.75,
+        "poupancaPorcentagem": 58
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0012",
+    "slug": "ibuprofeno-400mg-10-capsulas",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Ibuprofeno 400mg - 10 cápsulas",
+      "description": "Compare preços de Ibuprofeno 400mg - 10 cápsulas. O genérico custa em média R$ 11.55, uma economia de 46% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 9.99 optando pelo genérico de Ibuprofeno.",
+      "highlights": [
+        "Princípio Ativo: Ibuprofeno",
+        "Referência: Advil / Alivium",
+        "Classe: Anti-inflamatório",
+        "Economia média de 46%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Ibuprofeno",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.6355.144.18",
+      "classeTerapeutica": "Anti-inflamatório",
+      "apresentacao": "400mg - 10 cápsulas",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 21.54,
+        "genericoMedio": 11.55,
+        "poupancaReal": 9.99,
+        "poupancaPorcentagem": 46
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  },
+  {
+    "id": "med-0013",
+    "slug": "ibuprofeno-600mg-20-comprimidos",
+    "type": "medicamentos",
+    "metadata": {
+      "title": "Ibuprofeno 600mg - 20 comprimidos",
+      "description": "Compare preços de Ibuprofeno 600mg - 20 comprimidos. O genérico custa em média R$ 40.91, uma economia de 37% em relação ao referência.",
+      "source": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "updatedAt": "2026-01-03"
+    },
+    "visuals": {
+      "layout": "bento",
+      "accentColor": "#10b981"
+    },
+    "insights": {
+      "summary": "Economize R$ 23.76 optando pelo genérico de Ibuprofeno.",
+      "highlights": [
+        "Princípio Ativo: Ibuprofeno",
+        "Referência: Advil / Alivium",
+        "Classe: Anti-inflamatório",
+        "Economia média de 37%"
+      ]
+    },
+    "dataPoints": {
+      "principioAtivo": "Ibuprofeno",
+      "laboratorio": "Genérico",
+      "registroAnvisa": "1.4665.392.53",
+      "classeTerapeutica": "Anti-inflamatório",
+      "apresentacao": "600mg - 20 comprimidos",
+      "tarja": "livre",
+      "prices": {
+        "referencia": 64.67,
+        "genericoMedio": 40.91,
+        "poupancaReal": 23.76,
+        "poupancaPorcentagem": 37
+      }
+    },
+    "affiliate": {
+      "category": "medicamentos",
+      "cta": "Ver ofertas em farmácias",
+      "url": "https://exemplo.com/medicamentos"
+    }
+  }
+]
