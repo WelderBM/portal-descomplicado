@@ -7,7 +7,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 interface ExportPDFProps {
-  comparisonRef: React.RefObject<HTMLDivElement>;
+  comparisonRef: React.RefObject<HTMLDivElement | null>;
   item1Name: string;
   item2Name: string;
   type: "fipe" | "taco";

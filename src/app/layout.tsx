@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
+import { InstallPrompt } from "@/components/ui/InstallPrompt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,19 @@ export const metadata: Metadata = {
     "IPVA",
     "Preço de Veículos",
   ],
+  manifest: "/manifest.json",
+  themeColor: "#0a0a0a",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Descomplicado",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 };
 
 export default function RootLayout({
@@ -38,10 +52,12 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <InstallPrompt />
       </body>
     </html>
   );

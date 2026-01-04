@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-success to-info">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-success to-info">
                 <span className="text-lg font-bold text-background">D</span>
               </div>
               <span className="text-lg font-bold">Portal Descomplicado</span>

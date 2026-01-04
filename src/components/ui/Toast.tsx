@@ -66,11 +66,11 @@ export function Toast({
       }`}
       style={{ minWidth: "300px", maxWidth: "400px" }}
     >
-      <Icon className="h-5 w-5 flex-shrink-0" />
+      <Icon className="h-5 w-5 shrink-0" />
       <p className="flex-1 text-sm font-medium text-foreground">{message}</p>
       <button
         onClick={handleClose}
-        className="flex-shrink-0 text-foreground-muted hover:text-foreground transition-colors"
+        className="shrink-0 text-foreground-muted hover:text-foreground transition-colors"
       >
         <X className="h-4 w-4" />
       </button>

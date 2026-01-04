@@ -8,7 +8,8 @@ export type AffiliateCategory =
   | "seguro-auto-premium"
   | "suplementos"
   | "dieta-cetogenica"
-  | "produtos-naturais";
+  | "produtos-naturais"
+  | "farmacia";
 
 export interface AffiliateOfferProps {
   category: AffiliateCategory;
@@ -95,6 +96,20 @@ const OFFER_CONFIGS: Record<AffiliateCategory, OfferConfig> = {
     accentColor: "#10b981",
     features: ["Certificação orgânica", "Sem agrotóxicos", "Entrega semanal"],
   },
+  farmacia: {
+    title: "Ofertas em Farmácias Online",
+    description:
+      "Encontre o melhor preço para seus medicamentos e produtos de saúde",
+    cta: "Ver Ofertas",
+    url: "https://exemplo.com/farmacia",
+    icon: ShoppingCart,
+    accentColor: "#06b6d4", // Cyan
+    features: [
+      "Entrega rápida para todo Brasil",
+      "Descontos exclusivos online",
+      "Parcele suas compras",
+    ],
+  },
 };
 
 export function AffiliateOffer({
@@ -108,7 +123,7 @@ export function AffiliateOffer({
 
   return (
     <div
-      className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-surface to-surface-elevated p-6"
+      className="relative overflow-hidden rounded-xl border border-border bg-linear-to-br from-surface to-surface-elevated p-6"
       style={{
         borderColor: `${config.accentColor}33`,
       }}
@@ -131,7 +146,7 @@ export function AffiliateOffer({
       {/* Header */}
       <div className="mb-4 flex items-start gap-4">
         <div
-          className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg"
           style={{ backgroundColor: `${config.accentColor}22` }}
         >
           <Icon className="h-6 w-6" style={{ color: config.accentColor }} />
@@ -153,7 +168,7 @@ export function AffiliateOffer({
             className="flex items-center gap-2 text-sm text-foreground-muted"
           >
             <div
-              className="h-1.5 w-1.5 flex-shrink-0 rounded-full"
+              className="h-1.5 w-1.5 shrink-0 rounded-full"
               style={{ backgroundColor: config.accentColor }}
             />
             {feature}
@@ -185,7 +200,7 @@ export function AffiliateOffer({
  * Determina categoria de afiliado baseada no contexto
  */
 export function getAffiliateCategory(
-  type: "fipe" | "taco",
+  type: "fipe" | "taco" | "medicamentos" | string,
   itemValue?: number,
   carbs?: number
 ): AffiliateCategory {
@@ -195,6 +210,10 @@ export function getAffiliateCategory(
       return "seguro-auto-premium";
     }
     return "seguro-auto";
+  }
+
+  if (type === "medicamentos") {
+    return "farmacia";
   }
 
   // TACO - Nutrição

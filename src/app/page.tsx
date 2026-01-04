@@ -20,7 +20,7 @@ export default function Home() {
         <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl">
           Dados Complexos,
           <br />
-          <span className="bg-gradient-to-r from-success to-info bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-success to-info bg-clip-text text-transparent">
             Decisões Simples
           </span>
         </h1>
@@ -52,7 +52,7 @@ export default function Home() {
             href="/fipe"
             className="group relative overflow-hidden rounded-xl border border-border bg-surface p-8 transition-all hover:border-success hover:shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-success/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-linear-to-br from-success/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="relative">
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-success/10">
                 <Car className="h-6 w-6 text-success" />
@@ -70,7 +70,7 @@ export default function Home() {
             href="/nutricao"
             className="group relative overflow-hidden rounded-xl border border-border bg-surface p-8 transition-all hover:border-info hover:shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-info/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-linear-to-br from-info/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="relative">
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-info/10">
                 <Apple className="h-6 w-6 text-info" />
@@ -88,7 +88,7 @@ export default function Home() {
             href="/calculadoras"
             className="group relative overflow-hidden rounded-xl border border-border bg-surface p-8 transition-all hover:border-warning hover:shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-warning/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-linear-to-br from-warning/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="relative">
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-warning/10">
                 <Calculator className="h-6 w-6 text-warning" />
@@ -152,7 +152,7 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div className="mt-16 rounded-2xl border border-border bg-gradient-to-br from-surface to-surface-elevated p-12 text-center">
+      <div className="mt-16 rounded-2xl border border-border bg-linear-to-br from-surface to-surface-elevated p-12 text-center">
         <h2 className="mb-4 text-3xl font-bold">
           Por que Portal Descomplicado?
         </h2>

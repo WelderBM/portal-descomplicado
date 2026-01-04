@@ -331,15 +331,14 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  scrapeTaco(excelPath, 10)
-    .then(() => {
-      console.log("\n🎉 Script finalizado com sucesso!");
-      process.exit(0);
-    })
-    .catch((error) => {
-      console.error("\n💥 Erro fatal:", error);
-      process.exit(1);
-    });
+  try {
+    scrapeTaco(excelPath, 10);
+    console.log("\n🎉 Script finalizado com sucesso!");
+    process.exit(0);
+  } catch (error) {
+    console.error("\n💥 Erro fatal:", error);
+    process.exit(1);
+  }
 }
 
 export { scrapeTaco };
