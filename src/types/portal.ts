@@ -1,6 +1,6 @@
 // types/portal.ts - Sistema de Tipos Universal do Portal Descomplicado
 
-export type VerticalType = "fipe" | "taco" | "calc_geral";
+export type VerticalType = "fipe" | "taco" | "medicamentos" | "calc_geral";
 
 /**
  * Interface Base - O Coração do Portal
@@ -61,6 +61,7 @@ export interface TacoItem extends BaseItem {
       protein: number;
       carbs: number;
       fat: number;
+      fiber: number;
     };
     micros: {
       name: string;
@@ -72,10 +73,32 @@ export interface TacoItem extends BaseItem {
 }
 
 /**
+ * Vertical de Medicamentos (ANVISA)
+ * Focada em comparação de preços (Genérico vs Referência) e economia
+ */
+export interface MedicamentoItem extends BaseItem {
+  type: "medicamentos";
+  dataPoints: {
+    principioAtivo: string;
+    laboratorio: string;
+    registroAnvisa: string;
+    classeTerapeutica: string;
+    apresentacao: string; // Ex: "500mg - 30 comprimidos"
+    tarja: "livre" | "amarela" | "vermelha" | "preta";
+    prices: {
+      referencia: number;
+      genericoMedio: number;
+      poupancaReal: number; // Valor economizado em R$
+      poupancaPorcentagem: number; // % de economia
+    };
+  };
+}
+
+/**
  * Tipo Universal - O que o UniversalCalculator recebe
  * Usa Type Guards para decidir qual layout renderizar
  */
-export type PortalItem = FipeItem | TacoItem;
+export type PortalItem = FipeItem | TacoItem | MedicamentoItem;
 
 /**
  * Type Guards para segurança de tipos
@@ -86,4 +109,8 @@ export function isFipeItem(item: PortalItem): item is FipeItem {
 
 export function isTacoItem(item: PortalItem): item is TacoItem {
   return item.type === "taco";
+}
+
+export function isMedicamentoItem(item: PortalItem): item is MedicamentoItem {
+  return item.type === "medicamentos";
 }

@@ -8,9 +8,18 @@ const FAVORITES_KEY = "portal_descomplicado_favorites";
 export interface FavoriteItem {
   id: string;
   slug: string;
-  type: "fipe" | "taco";
+  type: "fipe" | "taco" | "medicamentos";
   title: string;
   savedAt: string;
+}
+
+/**
+ * Obtém favoritos por tipo (FIPE, TACO ou Medicamentos)
+ */
+export function getFavoritesByType(
+  type: "fipe" | "taco" | "medicamentos"
+): FavoriteItem[] {
+  return getFavorites().filter((fav) => fav.type === type);
 }
 
 /**
@@ -85,13 +94,6 @@ export function isFavorite(id: string): boolean {
 
   const favorites = getFavorites();
   return favorites.some((fav) => fav.id === id);
-}
-
-/**
- * Obtém favoritos por tipo (FIPE ou TACO)
- */
-export function getFavoritesByType(type: "fipe" | "taco"): FavoriteItem[] {
-  return getFavorites().filter((fav) => fav.type === type);
 }
 
 /**

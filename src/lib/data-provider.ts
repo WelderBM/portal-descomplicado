@@ -1,15 +1,25 @@
 // lib/data-provider.ts - Provedor de Dados do Portal
 
 import Fuse from "fuse.js";
-import { PortalItem, FipeItem, TacoItem } from "@/types/portal";
+import {
+  PortalItem,
+  FipeItem,
+  TacoItem,
+  MedicamentoItem,
+} from "@/types/portal";
 import fipeData from "@/data/fipe.json";
 import tacoData from "@/data/taco.json";
+import medicamentosData from "@/data/medicamentos.json";
 
 /**
  * Obtém todos os itens de todas as verticais
  */
 export function getAllItems(): PortalItem[] {
-  return [...fipeData, ...tacoData] as PortalItem[];
+  return [
+    ...fipeData,
+    ...(tacoData as any),
+    ...(medicamentosData as any),
+  ] as PortalItem[];
 }
 
 /**
@@ -31,7 +41,14 @@ export function getFipeItems(): FipeItem[] {
  * Obtém todos os itens TACO
  */
 export function getTacoItems(): TacoItem[] {
-  return tacoData as TacoItem[];
+  return tacoData as unknown as TacoItem[];
+}
+
+/**
+ * Obtém todos os itens de Medicamentos
+ */
+export function getMedicamentoItems(): MedicamentoItem[] {
+  return medicamentosData as unknown as MedicamentoItem[];
 }
 
 /**
@@ -49,6 +66,7 @@ export function searchItems(query: string): PortalItem[] {
   const fuse = new Fuse(allItems, {
     keys: [
       { name: "metadata.title", weight: 2 }, // Prioriza título
+      { name: "dataPoints.principioAtivo", weight: 1.8 }, // Princípio ativo (Medicamentos)
       { name: "metadata.description", weight: 1.5 },
       { name: "slug", weight: 1.2 },
       { name: "type", weight: 1 }, // Categoria
