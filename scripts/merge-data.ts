@@ -182,15 +182,14 @@ function main() {
 
 // Executa o script
 if (require.main === module) {
-  main()
-    .then(() => {
-      console.log("🎉 Script finalizado!");
-      process.exit(0);
-    })
-    .catch((error) => {
-      console.error("💥 Erro fatal:", error);
-      process.exit(1);
-    });
+  try {
+    main();
+    console.log("🎉 Script finalizado!");
+    process.exit(0);
+  } catch (error) {
+    console.error("💥 Erro fatal:", error);
+    process.exit(1);
+  }
 }
 
 export { mergeData, mergeFipe, mergeTaco };
