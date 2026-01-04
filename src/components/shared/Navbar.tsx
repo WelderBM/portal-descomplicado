@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { SearchBar } from "./SearchBar";
+import { CommandMenu } from "./CommandMenu";
 import { Car, Apple } from "lucide-react";
 
 export function Navbar() {
@@ -22,7 +22,7 @@ export function Navbar() {
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-md mx-8">
-            <SearchBar />
+            <CommandMenu />
           </div>
 
           {/* Navigation Links */}
@@ -67,7 +67,7 @@ export function Navbar() {
 
         {/* Search Bar - Mobile */}
         <div className="md:hidden pb-4">
-          <SearchBar />
+          <CommandMenu />
         </div>
       </div>
     </nav>
