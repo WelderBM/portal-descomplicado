@@ -99,9 +99,13 @@ export function SearchBar({
               {results.slice(0, 8).map((item) => (
                 <Link
                   key={item.id}
-                  href={`/${item.type === "fipe" ? "fipe" : "nutricao"}/${
-                    item.slug
-                  }`}
+                  href={`/${
+                    item.type === "fipe"
+                      ? "fipe"
+                      : item.type === "taco"
+                      ? "nutricao"
+                      : "medicamentos"
+                  }/${item.slug}`}
                   onClick={handleSelectItem}
                   className="flex items-start gap-3 rounded-lg p-3 hover:bg-surface-elevated transition-colors"
                 >
@@ -115,7 +119,11 @@ export function SearchBar({
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-xs font-medium uppercase tracking-wide text-foreground-muted">
-                        {item.type === "fipe" ? "FIPE" : "TACO"}
+                        {item.type === "fipe"
+                          ? "FIPE"
+                          : item.type === "taco"
+                          ? "TACO"
+                          : "MED"}
                       </span>
                     </div>
                     <p className="text-sm font-medium text-foreground truncate">

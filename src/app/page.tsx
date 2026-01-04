@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, Car, Apple, Calculator, TrendingUp } from "lucide-react";
+import { Search, Car, Apple, Calculator, TrendingUp, Pill } from "lucide-react";
 import { getAllItems } from "@/lib/data-provider";
 
 export default function Home() {
@@ -26,8 +26,9 @@ export default function Home() {
         </h1>
 
         <p className="mx-auto mb-8 max-w-2xl text-lg text-foreground-muted">
-          Consulte FIPE, Tabela TACO e calculadoras utilitárias em uma interface
-          limpa e objetiva. Sem anúncios invasivos, sem complexidade.
+          Consulte FIPE, Tabela TACO, Medicamentos e calculadoras utilitárias em
+          uma interface limpa e objetiva. Sem anúncios invasivos, sem
+          complexidade.
         </p>
 
         {/* Search Bar */}
@@ -36,7 +37,7 @@ export default function Home() {
             <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-foreground-muted" />
             <input
               type="text"
-              placeholder="Buscar veículos, alimentos, calculadoras..."
+              placeholder="Buscar veículos, alimentos, remédios..."
               className="w-full rounded-xl border border-border bg-surface py-4 pl-12 pr-4 text-foreground placeholder:text-foreground-muted focus:border-success focus:outline-none focus:ring-2 focus:ring-success/20 transition-all"
             />
           </div>
@@ -46,7 +47,7 @@ export default function Home() {
       {/* Verticais - Cards com Gradiente */}
       <div className="mb-16">
         <h2 className="mb-8 text-2xl font-bold">Explore por Vertical</h2>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {/* FIPE Card */}
           <Link
             href="/fipe"
@@ -59,8 +60,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-xl font-semibold">Tabela FIPE</h3>
               <p className="text-sm text-foreground-muted">
-                Consulte preços de veículos com histórico, tendências e
-                estimativa de IPVA
+                Consulte preços de veículos com histórico e tendências
               </p>
             </div>
           </Link>
@@ -77,8 +77,24 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-xl font-semibold">Nutrição TACO</h3>
               <p className="text-sm text-foreground-muted">
-                Informações nutricionais completas da base UNICAMP com
-                micronutrientes
+                Informações nutricionais completas e micronutrientes
+              </p>
+            </div>
+          </Link>
+
+          {/* Medicamentos Card */}
+          <Link
+            href="/medicamentos"
+            className="group relative overflow-hidden rounded-xl border border-border bg-surface p-8 transition-all hover:border-primary hover:shadow-xl"
+          >
+            <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="relative">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <Pill className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">Medicamentos</h3>
+              <p className="text-sm text-foreground-muted">
+                Compare preços, encontre genéricos e economize
               </p>
             </div>
           </Link>
@@ -95,7 +111,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-xl font-semibold">Calculadoras</h3>
               <p className="text-sm text-foreground-muted">
-                Ferramentas utilitárias para IPVA, IMC, calorias e muito mais
+                Ferramentas utilitárias para o dia a dia
               </p>
             </div>
           </Link>
@@ -118,9 +134,13 @@ export default function Home() {
           {featuredItems.map((item) => (
             <Link
               key={item.id}
-              href={`/${item.type === "fipe" ? "fipe" : "nutricao"}/${
-                item.slug
-              }`}
+              href={`/${
+                item.type === "fipe"
+                  ? "fipe"
+                  : item.type === "taco"
+                  ? "nutricao"
+                  : "medicamentos"
+              }/${item.slug}`}
               className="card group"
             >
               <div className="mb-3 flex items-center gap-2">
@@ -129,7 +149,11 @@ export default function Home() {
                   style={{ backgroundColor: item.visuals.accentColor }}
                 />
                 <span className="text-xs font-medium uppercase tracking-wide text-foreground-muted">
-                  {item.type === "fipe" ? "FIPE" : "TACO"}
+                  {item.type === "fipe"
+                    ? "FIPE"
+                    : item.type === "taco"
+                    ? "TACO"
+                    : "MED"}
                 </span>
               </div>
 
