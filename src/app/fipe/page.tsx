@@ -1,7 +1,8 @@
+```
 // app/fipe/page.tsx - Listagem de Veículos FIPE
 import Link from "next/link";
-import { getFipeItems } from "@/lib/data-provider";
 import { Car, TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export const metadata = {
   title: "Tabela FIPE - Preços de Veículos | Portal Descomplicado",
@@ -9,8 +10,34 @@ export const metadata = {
     "Consulte preços de veículos da Tabela FIPE com histórico, tendências e estimativa de IPVA. Interface limpa e dados atualizados.",
 };
 
-export default function FipeListPage() {
-  const fipeItems = getFipeItems();
+export const revalidate = 86400; // 24h ISR
+
+async function getFipeItemsFromDB() {
+  const { data: vertical } = await supabase
+    .from('verticals')
+    .select('id')
+    .eq('slug', 'fipe')
+    .single();
+
+  if (!vertical) return [];
+
+  const { data: items } = await supabase
+    .from('portal_items')
+    .select('*')
+    .eq('vertical_id', vertical.id)
+    .order('title', { ascending: true })
+    .limit(50);
+
+  return items || [];
+}
+
+export default async function FipeListPage() {
+  const fipeItems = await getFipeItemsFromDB();
+
+  // Stats Counters
+  const totalItems = fipeItems.length;
+  const upTrendCount = fipeItems.filter(i => i.data?.depreciation_info?.trend === 'up').length;
+  const downTrendCount = fipeItems.filter(i => i.data?.depreciation_info?.trend === 'down').length;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -32,7 +59,7 @@ export default function FipeListPage() {
             <p className="max-w-3xl text-lg text-foreground-muted">
               Consulte preços de mercado de veículos com histórico de
               valorização, tendências e estimativa de IPVA. Dados oficiais da
-              Tabela FIPE.
+              Tabela FIPE, atualizados.
             </p>
           </div>
 
@@ -49,44 +76,44 @@ export default function FipeListPage() {
       <div className="mb-8 grid gap-4 md:grid-cols-3">
         <div className="card">
           <p className="text-sm text-foreground-muted">Total de Veículos</p>
-          <p className="text-3xl font-bold">{fipeItems.length}</p>
+          <p className="text-3xl font-bold">{totalItems}</p>
         </div>
         <div className="card">
           <p className="text-sm text-foreground-muted">Em Valorização</p>
           <p className="text-3xl font-bold text-success">
-            {
-              fipeItems.filter(
-                (item) => item.dataPoints.depreciationInfo.trend === "up"
-              ).length
-            }
+            {upTrendCount}
           </p>
         </div>
         <div className="card">
           <p className="text-sm text-foreground-muted">Em Depreciação</p>
           <p className="text-3xl font-bold text-danger">
-            {
-              fipeItems.filter(
-                (item) => item.dataPoints.depreciationInfo.trend === "down"
-              ).length
-            }
+            {downTrendCount}
           </p>
         </div>
       </div>
 
       {/* Vehicle List */}
+      {fipeItems.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-border p-12 text-center col-span-full">
+            <p className="text-foreground-muted">Nenhum veículo encontrado no banco de dados.</p>
+            <p className="text-xs text-foreground-muted mt-2">Dica: Rode o script de ETL (fipe-pipeline.ts) para popular os dados.</p>
+          </div>
+      ) : (
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {fipeItems.map((item) => {
+          const depreciation = item.data.depreciation_info || { trend: 'stable', percentage: 0 };
+          
           const TrendIcon =
-            item.dataPoints.depreciationInfo.trend === "up"
+            depreciation.trend === "up"
               ? TrendingUp
-              : item.dataPoints.depreciationInfo.trend === "down"
+              : depreciation.trend === "down"
               ? TrendingDown
               : Minus;
 
           const trendColor =
-            item.dataPoints.depreciationInfo.trend === "up"
+            depreciation.trend === "up"
               ? "#10b981"
-              : item.dataPoints.depreciationInfo.trend === "down"
+              : depreciation.trend === "down"
               ? "#ef4444"
               : "#6b7280";
 
@@ -101,7 +128,7 @@ export default function FipeListPage() {
                 <div className="flex items-center gap-2">
                   <div
                     className="h-2 w-2 rounded-full"
-                    style={{ backgroundColor: item.visuals.accentColor }}
+                    style={{ backgroundColor: '#10b981' }} // FIPE default green
                   />
                   <span className="text-xs font-medium uppercase tracking-wide text-foreground-muted">
                     FIPE
@@ -112,7 +139,7 @@ export default function FipeListPage() {
 
               {/* Title */}
               <h3 className="mb-2 text-lg font-semibold group-hover:text-success transition-colors">
-                {item.metadata.title}
+                {item.title}
               </h3>
 
               {/* Price */}
@@ -121,40 +148,39 @@ export default function FipeListPage() {
                   {new Intl.NumberFormat("pt-BR", {
                     style: "currency",
                     currency: "BRL",
-                  }).format(item.dataPoints.currentPrice)}
+                  }).format(item.data.price_info?.current_price || 0)}
                 </p>
                 <p className="text-sm" style={{ color: trendColor }}>
-                  {item.dataPoints.depreciationInfo.trend === "up"
+                  {depreciation.trend === "up"
                     ? "+"
-                    : item.dataPoints.depreciationInfo.trend === "down"
+                    : depreciation.trend === "down"
                     ? "-"
                     : ""}
-                  {Math.abs(item.dataPoints.depreciationInfo.percentage)}%{" "}
-                  {item.dataPoints.depreciationInfo.trend === "up"
+                  {Math.abs(depreciation.percentage)}%{" "}
+                  {depreciation.trend === "up"
                     ? "valorização"
-                    : item.dataPoints.depreciationInfo.trend === "down"
+                    : depreciation.trend === "down"
                     ? "depreciação"
                     : "estável"}
                 </p>
               </div>
 
-              {/* Highlights */}
+              {/* Highlights (Quick Specs from Data) */}
               <div className="space-y-1">
-                {item.insights.highlights.slice(0, 2).map((highlight, idx) => (
-                  <p key={idx} className="text-xs text-foreground-muted">
-                    • {highlight}
-                  </p>
-                ))}
+                 <p className="text-xs text-foreground-muted">• Combustível: {item.data.fuel}</p>
+                 <p className="text-xs text-foreground-muted">• Ano: {item.data.year}</p>
               </div>
 
               {/* Footer */}
               <div className="mt-4 flex items-center gap-2 text-xs text-foreground-muted">
-                <span>{item.metadata.updatedAt}</span>
+                <span>Ref: {item.data.reference_month}</span>
               </div>
             </Link>
           );
         })}
       </div>
+      )}
     </div>
   );
 }
+```
