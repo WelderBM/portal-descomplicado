@@ -1,4 +1,3 @@
-```
 // app/fipe/page.tsx - Listagem de Veículos FIPE
 import Link from "next/link";
 import { Car, TrendingUp, TrendingDown, Minus } from "lucide-react";
@@ -120,7 +119,7 @@ export default async function FipeListPage() {
           return (
             <Link
               key={item.id}
-              href={`/fipe/${item.slug}`}
+              href={"/fipe/" + item.slug}
               className="card group"
             >
               {/* Header */}

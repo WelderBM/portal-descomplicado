@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Metadata } from "next";
-import Link from "next/link";
 import { TrendingDown, ShieldCheck, Pill } from "lucide-react";
 import { BentoCard } from "@/components/bento/BentoCard";
 import { supabase } from "@/lib/supabase";

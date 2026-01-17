@@ -1,10 +1,9 @@
-"use strict";
 import { supabase } from "@/lib/supabase";
 
 export async function omnisearch(query: string) {
   if (!query || query.length < 2) return [];
 
-  // Busca Full-Text diretamente no Supabase
+  // Busca Full-Text diretamente no Supabase com configuração em português
   const { data, error } = await supabase
     .from("portal_items")
     .select(
@@ -19,7 +18,10 @@ export async function omnisearch(query: string) {
       )
     `
     )
-    .textSearch("search_vectors", `${query}:*`)
+    .textSearch("search_vectors", query, {
+      config: "portuguese",
+      type: "websearch",
+    })
     .limit(10);
 
   if (error) {
