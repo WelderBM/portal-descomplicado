@@ -1,55 +1,86 @@
-<h1 align="center">Portal Descomplicado: Simplificando o Acesso a Dados Públicos</h1>
+<h1 align="center">RPG-Cousins: Ecossistema de Automação para Tormenta 20</h1>
 
 <div align="center">
-  <img src="./preview-portal.png" width="100%" alt="Portal Descomplicado Interface" style="border-radius: 10px"/>
+  <img src="./public/assets/preview-rpg.png" width="100%" alt="RPG-Cousins Banner" style="border-radius: 10px"/>
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-Logic-blue?logo=react" alt="React">
-  <img src="https://img.shields.io/badge/TypeScript-Pro-blue?logo=typescript" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Fuse.js-Search-orange" alt="Fuse.js">
-  <img src="https://img.shields.io/badge/Tailwind-UI-06B6D4?logo=tailwind-css" alt="Tailwind">
+  <img src="https://img.shields.io/badge/Next.js-15-black?logo=next.js" alt="Next.js 15">
+  <img src="https://img.shields.io/badge/TypeScript-Logic-blue?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Python-Automation-green?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/Firebase-Persistence-orange?logo=firebase" alt="Firebase">
 </p>
 
-## 📋 Sobre o Projeto
+## 📌 Visão de Engenharia
 
-O **Portal Descomplicado** é uma plataforma focada em **Data UX**, projetada para democratizar o acesso a informações utilitárias complexas, como a Tabela FIPE e a Tabela TACO. O objetivo central é eliminar a fricção entre o usuário e o dado bruto, oferecendo uma interface intuitiva, rápida e focada em resultados imediatos.
+O **RPG-Cousins** não é apenas uma ficha online; é uma solução de **Engenharia de Dados e UX** aplicada ao sistema *Tormenta 20*. O projeto nasceu da necessidade de eliminar a carga cognitiva e o erro humano durante as sessões do meu grupo de RPG. 
 
-## 🛠️ Desafios Técnicos e Soluções de Engenharia
-
-### 1. Normalização de Dados Complexos
-Dados públicos raramente vêm prontos para o consumo em aplicações modernas.
-* **A Abordagem:** Desenvolvi uma camada de pré-processamento para converter estruturas de dados heterogêneas em modelos TypeScript tipados e consistentes.
-* **O Ganho:** Isso permite que a aplicação consuma diferentes fontes (veículos, alimentos, indicadores) sob o mesmo padrão de interface, facilitando a escalabilidade do portal para novos domínios.
-
-### 2. Algoritmo de Busca Fuzzy (Fuse.js)
-Navegar em listas com milhares de itens requer uma busca que entenda o usuário.
-* **Implementação:** Utilização do **Fuse.js** para permitir buscas por aproximação. Se o usuário digitar "Onix 1.0", o sistema entrega o resultado instantaneamente, priorizando a relevância mesmo com termos parciais ou erros de digitação.
-* **Performance:** Todo o processamento de filtragem ocorre localmente, garantindo latência zero após o carregamento inicial dos dados.
-
-### 3. Interface "Mobile-First" e Acessibilidade
-Dados densos em telas pequenas costumam ser um problema de design.
-* **Solução:** Apliquei conceitos de **Design Atômico** com Tailwind CSS para garantir que tabelas complexas se transformem em "cards" legíveis em dispositivos móveis, mantendo a hierarquia de informação e o contraste adequado.
-
-## 🚀 O DNA de Automação
-
-Seguindo a mesma filosofia de outros projetos autorais, o Portal Descomplicado não depende de preenchimento manual de dados.
-* **Automação:** Utilizo processos de extração e tratamento de dados para alimentar o estado da aplicação de forma automatizada.
-* **Persistência:** O backend (Firebase) atua como uma camada leve de suporte para configurações e métricas, enquanto a inteligência do dado reside na lógica frontend, otimizando o custo operacional e a velocidade de resposta.
-
-## 💻 Stack Tecnológica
-
-* **Frontend:** React.js com TypeScript (Tipagem rigorosa para evitar erros de dados nulos).
-* **Estilização:** Tailwind CSS (Foco em performance de renderização e design system).
-* **Busca:** Fuse.js (Engine de busca leve e poderosa).
-* **Infraestrutura:** Firebase (Persistência e Hosting).
-
-## ⚙️ Execução Local
-
-1. **Clone:** `git clone https://github.com/WelderBM/portal-descomplicado`
-2. **Dependências:** `npm install`
-3. **Inicie:** `npm run dev`
+**O Diferencial:** Através de um "Smart Fork" e scripts de automação em Python, consegui traduzir centenas de páginas de regras em um sistema **Local-First**, onde a inteligência reside no cliente e o Firebase atua apenas como persistência de segurança.
 
 ---
-**Desenvolvido por [Welder Barroso](https://linkedin.com/in/welder-barroso-37b654207)**
-*Engenheiro Frontend focado em transformar complexidade em simplicidade.*
+
+## 🛠️ Tour pelas Funcionalidades
+
+### 1. Criação de Herói (O Wizard Inteligente)
+O processo de criação guia o usuário através de etapas lógicas, eliminando a necessidade de consultar o livro básico a cada escolha.
+* **Automação:** Ao escolher uma Raça ou Classe, o sistema aplica automaticamente os bônus de atributos e perícias treinadas.
+* **UX:** Filtros inteligentes mostram apenas as origens e divindades compatíveis com as escolhas anteriores.
+
+<div align="center">
+  <img src="./public/assets/prints/print-criacao.png" width="80%" alt="Criação de Herói" style="border-radius: 8px; border: 1px solid #ddd"/>
+</div>
+
+---
+
+### 2. Ficha do Herói (Motor de Recálculo)
+A ficha é o coração operacional do jogador. Ela utiliza um motor de funções puras para gerenciar dependências cruzadas.
+* **Efeito Cascata:** Se o herói recebe um bônus de "Força", o sistema recalcula instantaneamente o Ataque, o Dano e a Capacidade de Carga.
+* **Persistência Híbrida:** O estado da ficha é mantido via **Zustand** para performance máxima, sendo sincronizado com o Firestore apenas quando mudanças críticas ocorrem.
+
+<div align="center">
+  <img src="./public/assets/prints/print-ficha.png" width="80%" alt="Ficha do Herói" style="border-radius: 8px; border: 1px solid #ddd"/>
+</div>
+
+---
+
+### 3. Área do Mestre (Gestão de Ameaças)
+Uma interface dedicada para quem conduz o jogo, focada em monitorar o progresso do grupo e gerenciar combates.
+* **Interactive Threats:** O mestre pode visualizar e operar fichas de monstros com a mesma facilidade que os jogadores.
+* **Controle de Grupo:** Visão holística dos PVs e PMs de todos os membros da mesa em tempo real.
+
+<div align="center">
+  <img src="./public/assets/prints/print-mestre.png" width="80%" alt="Área do Mestre" style="border-radius: 8px; border: 1px solid #ddd"/>
+</div>
+
+---
+
+### 4. Mercado (Economia Dinâmica)
+Sistema de inventário e comércio que automatiza a gestão de Tibares (moeda do jogo).
+* **Cálculo de Custo:** Compra e venda de itens com atualização automática do peso total carregado e do saldo disponível.
+* **Validação de Regras:** Impede a compra de itens superiores ou mágicos sem os pré-requisitos necessários de nível ou ouro.
+
+<div align="center">
+  <img src="./public/assets/prints/print-mercado.png" width="80%" alt="Mercado e Inventário" style="border-radius: 8px; border: 1px solid #ddd"/>
+</div>
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+| Camada | Tecnologia | Motivação |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js 15 | SSR para SEO e App Router para navegação fluida. |
+| **Estado** | Zustand | Gestão atômica para evitar re-renders na ficha complexa. |
+| **Automação** | Python | Extração de dados (JSON) dos manuais oficiais. |
+| **Backend** | Firebase | Persistência leve e Auth para segurança dos usuários. |
+| **UI** | Tailwind CSS | Responsividade total para uso em tablets e celulares na mesa. |
+
+## ⚙️ Instalação e Uso
+
+1. **Clone:** `git clone https://github.com/WelderBM/rpg-cousins`
+2. **Dependências:** `npm install`
+3. **Variáveis de Ambiente:** Configure as chaves do Firebase no arquivo `.env.local`.
+4. **Dev:** `npm run dev`
+
+---
+**Desenvolvido por [Welder Barroso](https://linkedin.com/in/welder-barroso-37b654207)** *Criatividade aplicada à automação de sistemas complexos.*
