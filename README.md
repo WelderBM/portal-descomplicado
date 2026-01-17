@@ -1,164 +1,55 @@
-# 🚀 Portal Descomplicado
+<h1 align="center">Portal Descomplicado: Simplificando o Acesso a Dados Públicos</h1>
 
-**Hub de Decisão Brasileiro** focado em utilitários digitais de alta performance e UX extrema. Transformamos dados complexos e oficiais em decisões simples através de uma interface linear e minimalista.
+<div align="center">
+  <img src="./preview-portal.png" width="100%" alt="Portal Descomplicado Interface" style="border-radius: 10px"/>
+</div>
 
-## 🎯 Diferencial Estratégico
+<p align="center">
+  <img src="https://img.shields.io/badge/React-Logic-blue?logo=react" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-Pro-blue?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Fuse.js-Search-orange" alt="Fuse.js">
+  <img src="https://img.shields.io/badge/Tailwind-UI-06B6D4?logo=tailwind-css" alt="Tailwind">
+</p>
 
-Ao contrário dos concorrentes nacionais que operam como "Ad Farms" (sites poluídos de anúncios), o **Portal Descomplicado** adota:
+## 📋 Sobre o Projeto
 
-- ✅ **Interface Linear e Minimalista** - Inspirada no benchmark global Omni Calculator
-- ✅ **SEO Programático** - Milhares de páginas estáticas otimizadas
-- ✅ **SSG (Static Site Generation)** - Performance máxima com Next.js
-- ✅ **Monetização Contextual** - Afiliados de alto valor, sem poluição visual
+O **Portal Descomplicado** é uma plataforma focada em **Data UX**, projetada para democratizar o acesso a informações utilitárias complexas, como a Tabela FIPE e a Tabela TACO. O objetivo central é eliminar a fricção entre o usuário e o dado bruto, oferecendo uma interface intuitiva, rápida e focada em resultados imediatos.
 
-## 🛠️ Stack Técnica
+## 🛠️ Desafios Técnicos e Soluções de Engenharia
 
-```
-Framework:     Next.js 14+ (App Router)
-Linguagem:     TypeScript
-Estilização:   Tailwind CSS v4
-Ícones:        Lucide React
-Arquitetura:   Data-driven (JSON-first)
-```
+### 1. Normalização de Dados Complexos
+Dados públicos raramente vêm prontos para o consumo em aplicações modernas.
+* **A Abordagem:** Desenvolvi uma camada de pré-processamento para converter estruturas de dados heterogêneas em modelos TypeScript tipados e consistentes.
+* **O Ganho:** Isso permite que a aplicação consuma diferentes fontes (veículos, alimentos, indicadores) sob o mesmo padrão de interface, facilitando a escalabilidade do portal para novos domínios.
 
-## 📁 Estrutura do Projeto
+### 2. Algoritmo de Busca Fuzzy (Fuse.js)
+Navegar em listas com milhares de itens requer uma busca que entenda o usuário.
+* **Implementação:** Utilização do **Fuse.js** para permitir buscas por aproximação. Se o usuário digitar "Onix 1.0", o sistema entrega o resultado instantaneamente, priorizando a relevância mesmo com termos parciais ou erros de digitação.
+* **Performance:** Todo o processamento de filtragem ocorre localmente, garantindo latência zero após o carregamento inicial dos dados.
 
-```
-portal-descomplicado/
-├── src/
-│   ├── app/                    # Rotas Next.js
-│   │   ├── page.tsx           # Landing page
-│   │   ├── fipe/[slug]/       # Rotas dinâmicas FIPE
-│   │   └── nutricao/[slug]/   # Rotas dinâmicas TACO
-│   ├── components/
-│   │   ├── UniversalCalculator.tsx  # Motor de renderização
-│   │   ├── shared/            # Navbar, Footer
-│   │   ├── bento/             # Cards modulares
-│   │   └── ui/                # Componentes visuais
-│   ├── data/
-│   │   ├── fipe.json          # Dados automotivos
-│   │   └── taco.json          # Dados nutricionais
-│   ├── lib/
-│   │   ├── calculators.ts     # Fórmulas compartilhadas
-│   │   └── data-provider.ts   # Provedor de dados
-│   └── types/
-│       └── portal.ts          # Sistema de tipos universal
-```
+### 3. Interface "Mobile-First" e Acessibilidade
+Dados densos em telas pequenas costumam ser um problema de design.
+* **Solução:** Apliquei conceitos de **Design Atômico** com Tailwind CSS para garantir que tabelas complexas se transformem em "cards" legíveis em dispositivos móveis, mantendo a hierarquia de informação e o contraste adequado.
 
-## 🎨 Design System
+## 🚀 O DNA de Automação
 
-### Cores Semânticas
+Seguindo a mesma filosofia de outros projetos autorais, o Portal Descomplicado não depende de preenchimento manual de dados.
+* **Automação:** Utilizo processos de extração e tratamento de dados para alimentar o estado da aplicação de forma automatizada.
+* **Persistência:** O backend (Firebase) atua como uma camada leve de suporte para configurações e métricas, enquanto a inteligência do dado reside na lógica frontend, otimizando o custo operacional e a velocidade de resposta.
 
-```css
---success: #10b981   /* Verde - Valorização, Saudável */
---danger: #ef4444    /* Vermelho - Depreciação, Alerta */
---warning: #f59e0b   /* Amarelo - Atenção */
---info: #3b82f6      /* Azul - Informação */
---neutral: #6b7280   /* Cinza - Estável */
-```
+## 💻 Stack Tecnológica
 
-### Tema
+* **Frontend:** React.js com TypeScript (Tipagem rigorosa para evitar erros de dados nulos).
+* **Estilização:** Tailwind CSS (Foco em performance de renderização e design system).
+* **Busca:** Fuse.js (Engine de busca leve e poderosa).
+* **Infraestrutura:** Firebase (Persistência e Hosting).
 
-- **Dark Mode Nativo** por padrão
-- **Tipografia Clara** com hierarquia visual forte
-- **Layout Bento Grid** para organização modular
-- **Micro-animações** para feedback visual
+## ⚙️ Execução Local
 
-## 🚀 Como Rodar
-
-```bash
-# Instalar dependências
-npm install
-
-# Rodar em desenvolvimento
-npm run dev
-
-# Build para produção
-npm run build
-
-# Iniciar servidor de produção
-npm start
-```
-
-Acesse: `http://localhost:3000`
-
-## 📊 Verticais Implementadas
-
-### 1. Tabela FIPE (Automotiva)
-
-- ✅ Histórico de preços (12 meses)
-- ✅ Gráfico de tendência
-- ✅ Estimativa de IPVA
-- ✅ Análise de depreciação
-- ✅ Widget de afiliado (Seguro Auto)
-
-### 2. Tabela TACO (Nutrição)
-
-- ✅ Macronutrientes (Calorias, Proteínas, Carboidratos, Gorduras)
-- ✅ Micronutrientes com % Valor Diário
-- ✅ Visualização em barras de progresso
-- ✅ Insights de "Jornalismo Utilitário"
-- ✅ Widget de afiliado (Suplementos)
-
-## 🧩 Motor de Renderização (UniversalCalculator)
-
-O componente `UniversalCalculator` é o coração do portal. Ele:
-
-1. **Recebe um objeto JSON** (FipeItem ou TacoItem)
-2. **Usa Type Guards** para identificar o tipo de dado
-3. **Renderiza o layout apropriado**:
-   - FIPE → Gráfico de preços + IPVA + Tendência
-   - TACO → Macros + Radar de nutrientes + % VD
-
-```typescript
-// Exemplo de uso
-<UniversalCalculator item={portalItem} />
-```
-
-## 🎯 SEO Programático
-
-Cada item gera automaticamente:
-
-- ✅ Meta tags otimizadas
-- ✅ Título único e descritivo
-- ✅ URL amigável (slug)
-- ✅ Structured data (futuro)
-- ✅ Sitemap dinâmico (futuro)
-
-## 📈 Próximos Passos
-
-### Fase 2 - Expansão de Dados
-
-- [ ] Integração com API FIPE oficial
-- [ ] Expandir base TACO (500+ alimentos)
-- [ ] Adicionar vertical de Medicamentos
-- [ ] Calculadoras interativas (IMC, IPVA, etc.)
-
-### Fase 3 - Features Avançadas
-
-- [ ] Busca semântica com Fuse.js
-- [ ] Comparador de veículos/alimentos
-- [ ] Sistema de favoritos (localStorage)
-- [ ] PWA (Progressive Web App)
-
-### Fase 4 - Monetização
-
-- [ ] Integração com afiliados de seguros
-- [ ] Parcerias com e-commerces de suplementos
-- [ ] Google AdSense contextual (não invasivo)
-
-## 🏆 Diferenciais Técnicos
-
-1. **Data-First Architecture**: Escalar é apenas "jogar mais JSONs"
-2. **Type Safety**: TypeScript garante consistência
-3. **Performance**: SSG = páginas instantâneas
-4. **SEO Nativo**: Cada dado vira uma página indexável
-5. **Design Premium**: Foge do padrão "Ad Farm" brasileiro
-
-## 📝 Licença
-
-Este projeto é privado e proprietário.
+1. **Clone:** `git clone https://github.com/WelderBM/portal-descomplicado`
+2. **Dependências:** `npm install`
+3. **Inicie:** `npm run dev`
 
 ---
-
-**Desenvolvido com ❤️ para descomplicar dados complexos**
+**Desenvolvido por [Welder Barroso](https://linkedin.com/in/welder-barroso-37b654207)**
+*Engenheiro Frontend focado em transformar complexidade em simplicidade.*
