@@ -2,13 +2,18 @@ import { createClient } from "@supabase/supabase-js";
 
 // Cliente Supabase configurado para acesso público (busca)
 // Para operações administrativas (ETL), usaremos a Service Role Key em scripts separados
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// Fallbacks hardcoded para garantir o build caso as variáveis de ambiente falhem no carregamento
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  "https://bciscdnadbviyjsmtpki.supabase.co";
+const supabaseKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  "sb_publishable_2-UYiJfUCq7UmBN1OOExXw_3491GCFh";
 
 if (!supabaseUrl || !supabaseKey) {
   console.warn(
-    "Supabase URL or Key not found. Make sure to set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file."
+    "Supabase URL or Key not found. Make sure to set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your .env.local file.",
   );
 }
 
-export const supabase = createClient(supabaseUrl || "", supabaseKey || "");
+export const supabase = createClient(supabaseUrl, supabaseKey);
